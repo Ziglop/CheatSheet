@@ -1,0 +1,6 @@
+
+*Search for a file named user.txt*
+find / -type f -name user.txt 2>/dev/null
+
+*Search for executables requiring root privileges*
+find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
