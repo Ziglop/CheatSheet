@@ -1,0 +1,10 @@
+Tools for Subdomain enumeration:
+Privately hosted domains may be in  /etc/hosts or c:\windows\system32\drivers\etc\hosts
+
+dnsrecon
+dnsrecon -t brt -d url.com
+
+sublist3r
+./sublist3r.py -d url.com
+
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.url.com" -u http://my.ip -fs {size,size}
